@@ -3,7 +3,7 @@ import plotly.express as px
 import streamlit as st
 
 st.title("""
-Recreating Ben's Slides
+Official PDS Viewer
 """)
 
 directory = st.file_uploader("Drag and drop a file", type=['csv', 'xlsx'])
