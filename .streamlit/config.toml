@@ -1,2 +1,2 @@
 [server]
-mxUploadSize = 500
+maxUploadSize = 500
