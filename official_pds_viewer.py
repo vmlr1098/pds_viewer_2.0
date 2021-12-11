@@ -24,7 +24,7 @@ y_axis4 = st.sidebar.selectbox("Select Y-Variable 4", var_names, index=7)
 y_axis5 = st.sidebar.selectbox("Select Y-Variable 5", var_names, index=6)
 y_axis6 = st.sidebar.selectbox("Select Y-Variable 6", var_names, index=7)
 ################################################################################
-
+data['yyyy'] = data['yyyy'].astype('integer')
 yyyy_min = data['yyyy'].min()
 yyyy_max = data['yyyy'].max()
 y = list(range(yyyy_min, yyyy_max + 1))
