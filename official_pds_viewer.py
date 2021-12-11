@@ -8,7 +8,9 @@ Official PDS Viewer
 
 directory = st.file_uploader("Drag and drop a file", type=['csv', 'xlsx'])
 try:
-    data = (pd.read_csv(directory, na_values=[-9999])).dropna()
+    data = (pd.read_csv(directory,
+                        na_values=[-9999],
+                        dtype={"yyyy": "int8"})).dropna()
 except:
     st.error("Please import proper csv file from your local computer")
     st.stop()
