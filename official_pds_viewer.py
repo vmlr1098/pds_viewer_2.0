@@ -35,18 +35,22 @@ hh_min = data['hh'].min()
 hh_max = data['hh'].max()
 h = list(range(hh_min, hh_max + 1))
 
-x_axis = st.sidebar.selectbox("Select X-Variable", var_names, index=5)
-y_ax = st.sidebar.multiselect("Select up to 6 Y-variable(s)", var_names)
-year = st.sidebar.selectbox("Select Year", y)
-month = st.sidebar.selectbox("Select Month", m)
-day = st.sidebar.selectbox("Select Day", d)
-hours = st.sidebar.multiselect("Select up to 2 hours", h)
-len_hour = len(hours)
-if len_hour > 1:
-    hour_sel1 = hours[0]
-    hour_sel2 = hours[1]
-else:
-    hour = hours[0]
+try:
+    x_axis = st.sidebar.selectbox("Select X-Variable", var_names, index=5)
+    y_ax = st.sidebar.multiselect("Select up to 6 Y-variable(s)", var_names)
+    year = st.sidebar.selectbox("Select Year", y, index=0)
+    month = st.sidebar.selectbox("Select Month", m, index=0)
+    day = st.sidebar.selectbox("Select Day", d, index=0)
+    hours = st.sidebar.multiselect("Select up to 2 hours", h)
+    len_hour = len(hours)
+    if len_hour > 1:
+        hour_sel1 = hours[0]
+        hour_sel2 = hours[1]
+    else:
+        hour = hours[0]
+except:
+    st.error("Please select variables from drop-down menu")
+    st.stop()
 ############
 # st.write('u selected:', y_ax[0])--> was the 1st answer #len(y_ax))--> was 2
 
